@@ -1,0 +1,21 @@
+{
+    "name": "nextgen-solution/pigeon-php",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NextGenSolution\\Pigeon\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tetat Jearuksuwan",
+            "email": "tetat.j@ngs.in.th"
+        }
+    ]
+}
