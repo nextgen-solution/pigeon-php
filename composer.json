@@ -1,5 +1,6 @@
 {
     "name": "nextgen-solution/pigeon-php",
+    "description": "Pigeon Library for PHP https://pigeon.mycard.in.th",
     "require": {
         "php": "^7.3",
         "guzzlehttp/guzzle": "^6.5"
@@ -18,5 +19,6 @@
             "name": "Tetat Jearuksuwan",
             "email": "tetat.j@ngs.in.th"
         }
-    ]
+    ],
+    "minimum-stability": "beta"
 }
