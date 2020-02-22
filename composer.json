@@ -1,6 +1,7 @@
 {
     "name": "nextgen-solution/pigeon-php",
     "require": {
+        "php": "^7.4",
         "guzzlehttp/guzzle": "^6.5"
     },
     "require-dev": {
