@@ -34,7 +34,7 @@ class Pigeon
      * @param string $token
      * @param string $host
      */
-    public function __construct(string $token, string $host = null)
+    public function __construct(string $token, ?string $host = null)
     {
         $this->token = $token;
         $this->host = $host ?? $this->host;
@@ -57,7 +57,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendMail(string $recipient, string $subject, string $content, string $driver = null): ?array
+    public function sendMail(string $recipient, string $subject, string $content, ?string $driver = null): ?array
     {
         $url = '/api/send/mail';
         $json = array_filter(compact('recipient', 'subject', 'content', 'driver'));
@@ -78,7 +78,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendMailByTemplate(string $recipient, string $template, array $params = [], string $driver = null): ?array
+    public function sendMailByTemplate(string $recipient, string $template, array $params = [], ?string $driver = null): ?array
     {
         $url = '/api/send/mail';
         $json = array_filter(compact('recipient', 'template', 'params', 'driver'));
@@ -115,7 +115,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendText(string $recipient, string $content, string $driver = null): ?array
+    public function sendText(string $recipient, string $content, ?string $driver = null): ?array
     {
         $url = '/api/send/text';
         $json = array_filter(compact('recipient', 'content', 'driver'));
@@ -136,7 +136,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendTextByTemplate(string $recipient, string $template, array $params = [], string $driver = null): ?array
+    public function sendTextByTemplate(string $recipient, string $template, array $params = [], ?string $driver = null): ?array
     {
         $url = '/api/send/text';
         $json = array_filter(compact('recipient', 'template', 'params', 'driver'));
@@ -175,7 +175,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendNotification(string $target, string $recipient, string $subject, string $content, string $driver = null): ?array
+    public function sendNotification(string $target, string $recipient, string $subject, string $content, ?string $driver = null): ?array
     {
         $url = '/api/send/notification';
         $json = array_filter(compact('target', 'recipient', 'subject', 'content', 'driver'));
@@ -197,7 +197,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendNotificationByTemplate(string $target, string $recipient, string $template, array $params = [], string $driver = null): ?array
+    public function sendNotificationByTemplate(string $target, string $recipient, string $template, array $params = [], ?string $driver = null): ?array
     {
         $url = '/api/send/notification';
         $json = array_filter(compact('target', 'recipient', 'template', 'params', 'driver'));
@@ -236,7 +236,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendOTPViaMail(string $recipient, string $template, array $params = [], string $remark = null, string $driver = null): ?array
+    public function sendOTPViaMail(string $recipient, string $template, array $params = [], ?string $remark = null, ?string $driver = null): ?array
     {
         $url = '/api/otp/mail';
         $json = array_filter(compact('recipient', 'template', 'params', 'remark', 'driver'));
@@ -258,7 +258,7 @@ class Pigeon
      * @param string $driver
      * @return array|null
      */
-    public function sendOTPViaText(string $recipient, string $template, array $params = [], string $remark = null, string $driver = null): ?array
+    public function sendOTPViaText(string $recipient, string $template, array $params = [], ?string $remark = null, ?string $driver = null): ?array
     {
         $url = '/api/otp/text';
         $json = array_filter(compact('recipient', 'template', 'params', 'remark', 'driver'));
@@ -280,7 +280,7 @@ class Pigeon
      * @param string $remark
      * @return bool
      */
-    public function verifyOTP(string $recipient, string $otp, bool $strict = false, string $reference = null, string $remark = null): bool
+    public function verifyOTP(string $recipient, string $otp, bool $strict = false, ?string $reference = null, ?string $remark = null): bool
     {
         $url = '/api/otp/verify';
         $json = array_filter(compact('recipient', 'otp', 'strict', 'reference', 'remark'));
