@@ -172,13 +172,14 @@ class Pigeon
      * @param string $recipient
      * @param string $subject
      * @param string $content
+     * @param array $options
      * @param string $driver
      * @return array|null
      */
-    public function sendNotification(string $target, string $recipient, string $subject, string $content, ?string $driver = null): ?array
+    public function sendNotification(string $target, string $recipient, string $subject, string $content, array $options = [], ?string $driver = null): ?array
     {
         $url = '/api/send/notification';
-        $json = array_filter(compact('target', 'recipient', 'subject', 'content', 'driver'));
+        $json = array_filter(compact('target', 'recipient', 'subject', 'content', 'options', 'driver'));
 
         $response = $this->getHttp()->post($url, [
             'json' => $json,
@@ -194,13 +195,14 @@ class Pigeon
      * @param string $recipient
      * @param string $template
      * @param array $params
+     * @param array $options
      * @param string $driver
      * @return array|null
      */
-    public function sendNotificationByTemplate(string $target, string $recipient, string $template, array $params = [], ?string $driver = null): ?array
+    public function sendNotificationByTemplate(string $target, string $recipient, string $template, array $params = [], array $options = [], ?string $driver = null): ?array
     {
         $url = '/api/send/notification';
-        $json = array_filter(compact('target', 'recipient', 'template', 'params', 'driver'));
+        $json = array_filter(compact('target', 'recipient', 'template', 'params', 'options', 'driver'));
 
         $response = $this->getHttp()->post($url, [
             'json' => $json,
