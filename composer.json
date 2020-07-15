@@ -2,7 +2,7 @@
     "name": "nextgen-solution/pigeon-php",
     "description": "Pigeon Library for PHP https://pigeon.mycard.in.th",
     "require": {
-        "php": "^7.3",
+        "php": "^7.2",
         "guzzlehttp/guzzle": "^6.0 || ^7.0"
     },
     "require-dev": {
