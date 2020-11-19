@@ -232,13 +232,13 @@ class Pigeon
      * Send OTP email.
      *
      * @param string $recipient
-     * @param string $template
+     * @param string|null $template
      * @param array $params
-     * @param string $remark
-     * @param string $driver
+     * @param string|null $remark
+     * @param string|null $driver
      * @return array|null
      */
-    public function sendOTPViaMail(string $recipient, string $template, array $params = [], ?string $remark = null, ?string $driver = null): ?array
+    public function sendOTPViaMail(string $recipient, ?string $template = null, array $params = [], ?string $remark = null, ?string $driver = null): ?array
     {
         $url = '/api/otp/mail';
         $json = array_filter(compact('recipient', 'template', 'params', 'remark', 'driver'));
@@ -254,13 +254,13 @@ class Pigeon
      * Send OTP text.
      *
      * @param string $recipient
-     * @param string $template
+     * @param string|null $template
      * @param array $params
-     * @param string $remark
-     * @param string $driver
+     * @param string|null $remark
+     * @param string|null $driver
      * @return array|null
      */
-    public function sendOTPViaText(string $recipient, string $template, array $params = [], ?string $remark = null, ?string $driver = null): ?array
+    public function sendOTPViaText(string $recipient, ?string $template = null, array $params = [], ?string $remark = null, ?string $driver = null): ?array
     {
         $url = '/api/otp/text';
         $json = array_filter(compact('recipient', 'template', 'params', 'remark', 'driver'));
